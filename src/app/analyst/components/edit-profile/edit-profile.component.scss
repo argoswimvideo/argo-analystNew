@@ -1,0 +1,29 @@
+.dp{
+    border-radius: 50%;
+    height: 14.8rem;
+    width: 14.8rem;
+}
+
+.tabs{
+    font-size: 1.8rem;
+    width: 48rem;
+    display: flex;
+    gap: 1.5rem;
+    color: var(--blue2);
+    font-weight: bold;
+    //border-bottom: .15rem solid var(--text-input);
+    div{
+        cursor: pointer;
+        border-top-left-radius: .5rem;
+        border-top-right-radius: .5rem;
+        flex-grow: 1;
+        display: flex;
+        justify-content: center;
+        border: .15rem solid var(--blue2);
+        padding: 1em 1.5em;
+    }
+    div.active{
+        background-color: var(--blue2);
+        color: white;
+    }
+}

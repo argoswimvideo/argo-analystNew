@@ -1,0 +1,34 @@
+<div class="h-100 d-flex justify-content-center align-items-center">
+    <!-- control == 1 -->
+    <div class="d-flex flex-column align-items-center" style="gap: 5.5rem;" *ngIf="control == 1">
+        <h1 class="title">Upload your work here</h1>
+        <h3 class="descp">Browse a video clip from your files and upload here <br> before delivery time etc.</h3>
+        <div class="actions" style="gap: 1.2rem;">
+            <label for="file1">Browse</label>
+            <button class="secondary" routerLink='/work'>Go Back</button>
+        </div>
+        <input (change)='handleFile($event)' type="file" id="file1" class="d-none">
+    </div>
+    <!-- control == 2 -->
+    <div class="d-flex flex-column align-items-center" style="gap: 5.5rem;" *ngIf="control == 2">
+        <h1 class="title">Are you sure?</h1>
+        <h3 class="descp">Are you sure you want to upload FIRSTNAME.LASTNAME.TEAM.STROKE.DATE.TIME to <br> your
+            completed work folder? This action cannot be undone.</h3>
+        <div style="width: 45rem;height: 25.1rem;">
+            <app-video-container></app-video-container>
+            <h3 class="descp mt-3">FIRSTNAME.LASTNAME.TEAM.STROKE.DATE.TIME</h3>
+        </div>
+        <div class="actions mt-5" style="gap: 1.2rem;">
+            <button class="primary" (click)='control = 1'>No, Cancel Upload</button>
+            <button class="secondary" (click)='control = 3'>Yes, Upload Video</button>
+        </div>
+    </div>
+    <!-- control == 3 -->
+    <div class="d-flex flex-column align-items-center" style="gap: 4.5rem;" *ngIf="control == 3">
+        <img height="130rem" src="assets/images/check-mark.png" alt="" srcset="">
+        <h1 class="title">All Done</h1>
+        <h3 class="descp">Evo has been succesfully Uploaded</h3>
+        <h3 class="descp" routerLink='/analyst' style="text-decoration: underline;cursor: pointer;">Back to Dashboard
+        </h3>
+    </div>
+</div>

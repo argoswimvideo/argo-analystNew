@@ -1,0 +1,227 @@
+<div style="gap: 3.8rem;" class="h-100 d-flex flex-column justify-content-center align-items-center"
+    *ngIf="screenController == 1">
+    <h1 class="title">Welcome Josh!</h1>
+    <h3 class="descp">
+        {{discription}}
+    </h3>
+    <h2>Set up your profile</h2>
+    <img class="img1" width="146" height="146" [src]="profilePhoto" alt="" srcset="">
+    <div class="actions" style="gap: 1.2rem;">
+        <label for="file2">Upload Photo</label>
+        <button class="secondary" style="width: 14rem;" (click)="changeScreen(2)">Next</button>
+    </div>
+    <input (change)='handleFile($event,1)' type="file" id="file2" class="d-none">
+    <!-- <a download='file_name' [href]="profilePhoto">clickkkk</a> -->
+</div>
+
+<!-- personal-info -->
+
+<div style="gap: 3.8rem;" class="h-100 d-flex flex-column justify-content-center align-items-center"
+    *ngIf="screenController == 2">
+    <h1 class="title">Welcome Josh!</h1>
+    <h3 class="descp">
+        {{discription}}
+    </h3>
+    <h2>Personal Info</h2>
+    <div [formGroup]="personalInfoForm">
+        <div class="row mb-4">
+            <div class="col-4">
+                <input formControlName='firstName' type="text" placeholder="First Name">
+            </div>
+            <div class="col-4">
+
+                <input formControlName='lastName' type="text" placeholder="Last Name">
+            </div>
+            <div class="col-4">
+
+                <input type="text" formControlName='email' placeholder="Email">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <input type="password" placeholder="Password" formControlName='passwrd'>
+            </div>
+            <div class="col-4">
+                <input type="text" placeholder="Cell Number" formControlName='cellPhone'>
+            </div>
+            <div class="col-4">
+                <input type="text" placeholder="Mailing Address" formControlName='mailingAddress'>
+            </div>
+        </div>
+    </div>
+    <div class="actions" style="gap: 1.2rem;">
+        <button class="primary" style="width: 14rem;" (click)="changeScreen(1)">Back</button>
+        <button class="secondary" style="width: 14rem;" (click)="changeScreen(3)">Next</button>
+    </div>
+</div>
+
+<!-- Bank-info -->
+
+<div style="gap: 3.8rem;" class="h-100 d-flex flex-column justify-content-center align-items-center"
+    *ngIf="screenController == 3">
+    <h1 class="title">Welcome Josh!</h1>
+    <h3 class="descp">
+        {{discription}}
+    </h3>
+    <h2>Bank Details</h2>
+    <div [formGroup]="bankInfoForm">
+        <div class="row mb-4">
+            <div class="col-6">
+                <input type="text" formControlName='achNumber' placeholder="ACH Number">
+            </div>
+            <div class="col-6">
+
+                <input type="text" formControlName='routingNumber' placeholder="Routing Number">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+
+                <input type="password" formControlName='accNumber' placeholder="Account Number">
+            </div>
+            <div class="col-6">
+
+                <input type="text" formControlName='bankName' placeholder="Bank name">
+            </div>
+        </div>
+    </div>
+    <div class="actions" style="gap: 1.2rem;">
+        <button class="primary" style="width: 14rem;" (click)="changeScreen(2)">Back</button>
+        <button [disabled]="bankInfoForm.invalid" class="secondary" style="width: 14rem;"
+            (click)="changeScreen(4)">Next</button>
+    </div>
+</div>
+
+<!-- upload CV -->
+
+<div style="gap: 3.8rem;" class="h-100 d-flex flex-column justify-content-center align-items-center"
+    *ngIf="screenController == 4">
+    <h1 class="title">Almost there!</h1>
+    <h3 class="descp">
+        {{discription}}
+    </h3>
+    <h2>Upload CV</h2>
+    <div style="background-color: #f6f6f6;display: grid;place-items: center; height: 25rem; width: 45rem;">
+        <img style="height: 7rem;" src="../../../../assets/images/pdf-1512.svg" alt="" srcset="">
+        <h3 class="descp">Resume.pdf</h3>
+    </div>
+
+    <div class="actions" style="gap: 1.2rem;">
+        <label for="file3">Upload CV</label>
+        <button class="primary" style="width: 14rem;" (click)="changeScreen(3)">Back</button>
+        <button class="secondary" style="width: 14rem;" (click)="changeScreen(5)">Next</button>
+    </div>
+    <input (change)='handleFile($event,2)' type="file" id="file3" class="d-none">
+    <!-- <a download='file_name' [href]="profilePhoto">clickkkk</a> -->
+</div>
+
+
+<!-- Downlaod raw video -->
+
+<div style="gap: 3.8rem;" class="h-100 d-flex flex-column justify-content-center align-items-center"
+    *ngIf="screenController == 5">
+    <h1 class="title">Josh Doe</h1>
+    <h3 class="descp">
+        Please download a sample raw file, and a sample eVO, done previously by Argo analyst
+    </h3>
+    <h2>Step 1: Download raw video</h2>
+    <div style="height: 25rem;width: 45rem;">
+        <app-video-container></app-video-container>
+    </div>
+    <h3 class="descp" style="max-width:100%;margin-top: -2.6rem;">FIRSTNAME.LASTNAME.TEAM.STROKE.DATE.TIME</h3>
+    <div class="actions" style="gap: 1.2rem;">
+        <button class="primary" style="width: 14rem;" (click)="changeScreen(4)">Back</button>
+        <button class="primary">
+            <a href="assets/video/demo_swim.mp4" download="DemoVideo">Download</a>
+        </button>
+        <button class="primary" style="width: 14rem;" (click)="changeScreen(6)">
+            Next
+        </button>
+    </div>
+</div>
+
+
+<!-- Downlaod Sample evo -->
+
+<div style="gap: 3.8rem;" class="h-100 d-flex flex-column justify-content-center align-items-center"
+    *ngIf="screenController == 6">
+    <h1 class="title">Josh Doe</h1>
+    <h3 class="descp">
+        Please download a sample raw file, and a sample eVO, done previously by Argo analyst
+    </h3>
+    <h2>Step 2: Download sample eVO</h2>
+    <div style="background-color: #f6f6f6;display: grid;place-items: center; height: 25rem; width: 45rem;">
+        <img style="height: 7rem;" src="../../../../assets/images/icons8-archive-folder-80.png" alt="" srcset="">
+        <h3 class="descp">tileSub.evo</h3>
+    </div>
+    <div class="actions" style="gap: 1.2rem;">
+        <button class="primary" style="width: 14rem;" (click)="changeScreen(5)">Back</button>
+        <button class="primary">
+            <a href="assets/video/demo_swim.mp4" download="DemoSampleVideo">Download</a>
+        </button>
+        <button class="primary" style="width: 14rem;" (click)="changeScreen(7)">
+            Next
+        </button>
+    </div>
+</div>
+
+
+<!-- Upload practices -->
+
+<div style="gap: 3.8rem;" class="h-100 d-flex flex-column justify-content-center align-items-center"
+    *ngIf="screenController == 7">
+    <h1 class="title">Josh Doe</h1>
+    <h3 class="descp">
+        Please upload your sample practice Evo videos so that we <br> can review them and proceed with the application
+    </h3>
+    <h2>Step 3: Upload your sample practices</h2>
+    <!-- <div style="background-color: #f6f6f6;display: grid;place-items: center; height: 25rem; width: 45rem;">
+        <img style="height: 7rem;" src="../../../../assets/images/icons8-archive-folder-80.png" alt="" srcset="">
+        <h3 class="descp"></h3>
+    </div> -->
+    <div class="actions" style="gap: 1.2rem;">
+        <button class="primary" style="width: 14rem;" (click)="changeScreen(6)">Back</button>
+        <label for="file9">Browse</label>
+        <button class="primary" style="width: 14rem;" (click)="changeScreen(8)">
+            Next
+        </button>
+    </div>
+    <input (change)='handleFile($event,3)' type="file" id="file9" class="d-none">
+    <table>
+        <thead>
+            <th>Video</th>
+            <th>Name</th>
+            <th>Date Filmed</th>
+            <th>Action</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of sampleWorkArr;let i = index">
+                <td>
+                    <div style="width: 9.4rem;height: 6.4rem;">
+                        <app-video-container></app-video-container>
+                    </div>
+                </td>
+                <td>Josh.Tyler.Shark.ButterFly.2/2/2020.50:30</td>
+                <td>10 Dec,2021</td>
+                <td>
+                    <div class="actions d-flex">
+                        <button class="primary">Delete</button>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- finish Profile -->
+<div style="gap: 3.8rem;" class="h-100 d-flex flex-column justify-content-center align-items-center"
+    *ngIf="screenController == 8">
+    <h1 class="title">We'll be with you shortly</h1>
+    <h3 class="descp">
+        Dear user, we have received your sample Evo. Our experts will review it <br> now and we'll let you know if you
+        are eligible for this post or not
+    </h3>
+    <button class="primary" style="width: 15rem;" (click)="changeScreen(1)">
+        Back Home
+    </button>
+</div>

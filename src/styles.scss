@@ -1,0 +1,194 @@
+/* You can add global styles to this file, and also import other style files */
+@import url(//db.onlinewebfonts.com/c/236987803794b916d95e7fd41ed4fee0?family=SF+Pro+Text);
+@import "~angular-notifier/styles";
+:root{
+    --blue: #3176cc;
+    --dullBlack: rgba(0, 0, 0, 0.706);
+    --bgGrey: #ecebeb;
+    --bgGrey2: #e3e3e3;
+    --green: #4cd864;
+    --blue2: #0f4e9b;
+    --blue3: #13478b;
+    --black: #4f4f4f;
+    --text-color: black;
+    --text-input: #979797;
+    --text-input-color: rgba(151, 151, 151,0.93);
+
+}
+html,body{
+    height: 100%;
+    font-family: 'SF Pro Text';
+}
+html{
+    font-size: clamp(8px,.52vw,16px);
+}
+input,select{
+    font-size: 2rem;
+    padding: .75rem 1rem;
+    border-radius: .5rem;
+    border: solid .13rem var(--text-input);
+    color: var(--text-input-color);
+    outline: none;
+    &:focus{
+        border: solid .13rem var(--blue2);
+    }
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgba(151, 151, 151,0.35);
+    opacity: 1; /* Firefox */
+  }
+  
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: rgba(151, 151, 151,0.35);
+  }
+  
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: rgba(151, 151, 151,0.35);
+  }
+h1.title{
+    font-size: 4.2rem;
+    font-weight: bold;
+    letter-spacing: 1.35px;
+}
+h3.descp{
+    font-size: 2rem;
+    letter-spacing: .6px;
+    color: var(--dullBlack);
+    line-height: 3.6rem;
+    text-align: center;
+}
+h2{
+    font-size: 2.8rem;
+    color: var(--text-color);
+}
+button{
+    &:active{
+        opacity: .5 !important;
+    }
+    &:disabled{
+        opacity: .5 !important;
+        &:hover{
+            cursor: not-allowed;
+        }
+    }
+}
+.dropdown-menu{
+    font-size: 2rem;
+}
+.blue{
+    color: var(--blue2);
+}
+.center-items{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form-check-input:checked{
+    background-color: var(--green);
+    border-color: var(--green);
+}
+.form-check-input{
+    cursor: pointer;
+}
+table{
+    width: 100%;
+    font-size: 2rem;
+    letter-spacing: .36px;
+    th{
+        background-color: var(--bgGrey2);
+        padding: 1em 1.4em;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+    }
+    td{
+        color: var(--dullBlack);
+        padding: 1em 1.4em;
+    }
+    td,th{
+        white-space: nowrap;
+    }
+}
+.actions{
+    gap: 1.55rem;
+    display: flex;
+    button,label{
+        border-radius: 1000px;
+        
+            cursor: pointer;
+        
+        font-size: 1.9rem;
+        padding: .5em 1.2em;
+        border: .15rem solid var(--blue2);
+        a{
+            color: white;
+            text-decoration: none;
+        }
+    }
+    button.primary{
+        background-color: var(--blue2);
+        color: white;
+    }
+    button.secondary{
+        background-color: transparent;
+        color: var(--blue2);
+    }
+    label:first-child{
+        background-color: var(--blue2);
+        color: white;
+    }
+}
+video {
+    object-fit: fill;
+  }
+  .overlayCont::after{
+    display: flex;
+    content: '';
+    height: 100%;
+    width: 100%;
+    top: 0;
+    background-color: black;
+    opacity: .3;
+    position: absolute;
+  }
+  button.primary{
+    border-radius: 1000px;
+        
+    cursor: pointer;
+
+font-size: 1.9rem;
+padding: .5em 1.2em;
+border: .15rem solid var(--blue2);
+background-color: var(--blue2);
+color: white;
+  }
+  .otp-input{
+    border-radius: 1000px !important;
+    border: solid 1.2px #c5c5c5 !important;
+    &:focus{
+        outline: none;
+        border:1.2px solid var(--blue2) !important
+    }
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 1rem;
+    height: 1rem;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: var(--bgGrey2);
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: .6rem;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--blue2); 
+  }

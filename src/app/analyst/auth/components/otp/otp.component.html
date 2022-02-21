@@ -1,0 +1,13 @@
+<div class="center-items  h-100">
+    <div class="d-flex flex-column align-items-center" style="gap: 7rem;">
+        <h1 class="title">OTP Verification</h1>
+        <h3 class="descp" style="margin-top: -4rem;">
+            We have sent a 5 digit OTP To +1 89******46 <br>
+            Please enter the OTP to continue
+        </h3>
+
+        <ng-otp-input (onInputChange)="onOtpChange($event)" [config]="{length:5}"></ng-otp-input>
+        <button class="primary">Verify Number</button>
+        <h3>Didn't Receive Code?<span class="blue ms-3">Resend Code</span></h3>
+    </div>
+</div>

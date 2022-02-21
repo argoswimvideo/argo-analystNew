@@ -1,0 +1,42 @@
+<div class="d-flex justify-content-center h-100 pb-5">
+    <div class="d-flex flex-column align-items-center h-100" style="gap: 4rem;width: 100%;max-width: 170rem;">
+        <h1 class="title">Completed</h1>
+        <h3 class="descp">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
+            labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+            aliquip ex ea commodo consequat. </h3>
+        <div class="flex-grow-1 w-100 overflow-hidden pe-1 pb-1" style="background-color: var(--bgGrey);">
+            <div class="overflow-auto h-100">
+                <table>
+                    <thead>
+                        <th>Video</th>
+                        <th>F.Name</th>
+                        <th>L.Name</th>
+                        <th>Stroke Type</th>
+                        <th>Team</th>
+                        <th>Group</th>
+                        <th>Package</th>
+                        <th>Price</th>
+                        <th>Staus</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of [1,1,1,1,1,1];let i = index">
+                            <td>
+                                <div style="width: 9.4rem;height: 6.4rem;">
+                                    <app-video-container></app-video-container>
+                                </div>
+                            </td>
+                            <td>Hannah</td>
+                            <td>Martin</td>
+                            <td>Back stroke</td>
+                            <td>Sharks</td>
+                            <td>Silver</td>
+                            <td>Standard</td>
+                            <td>$25.00</td>
+                            <td>Paid</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

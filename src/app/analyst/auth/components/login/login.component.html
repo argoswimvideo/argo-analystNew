@@ -1,0 +1,26 @@
+<div class="h-100 d-grid" style="place-items: center;">
+    <div class="d-flex flex-column align-items-center" style="gap: 5.1rem;">
+        <img src="assets/images/Argo Swim Logo1.png" style="height: 10.6rem;width: 10.6rem;" alt="" srcset="">
+        <h1 class="title">Analyst Login</h1>
+        <h3 class="descp">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br> sed do eiusmod tempor incididunt
+        </h3>
+        <div [formGroup]="loginForm">
+            <input formControlName='email' type="text" placeholder="Email ID" class="mb-4">
+            <br>
+            <div class="pasinp">
+                <input formControlName='password' [type]="type" placeholder="Password">
+                <img *ngIf="type == 'text'" (click)="changeType('password')"
+                    src="../../../../../assets/images/eye-slash-solid.svg" alt="" srcset="">
+                <img *ngIf="type == 'password'" (click)="changeType('text')"
+                    src="../../../../../assets/images/eye-solid.svg" alt="" srcset="">
+            </div>
+        </div>
+        <button class="primary" [disabled]="loginForm.invalid || loading" style="width: 15rem;" (click)="login()">Login
+            <div *ngIf="loading" class="spinner-border ms-4" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </button>
+        <h4 style="color: var(--blue3);font-weight: bold;">Forgot Password?</h4>
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="h-100" style="display: grid; place-items: center;">
+    <div class="d-flex flex-column justify-content-center align-items-center" style="gap: 5rem;">
+        <h1 class="title">
+            Edit Profile
+        </h1>
+        <img class="dp" src="../../../../assets/images/Group 40306.png" alt="" srcset="">
+        <div class="tabs">
+            <div [ngClass]="{'active': tab == 1}" (click)="changeTab(1)">Personal Info</div>
+            <div (click)="changeTab(2)" [ngClass]="{'active': tab == 2}">Bank Info</div>
+        </div>
+        <div *ngIf="tab == 2">
+            <div class="row mb-4">
+                <div class="col">
+                    <input type="text" placeholder="ACH Number">
+                </div>
+                <div class="col">
+                    <input type="text" placeholder="Routing Number">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="text" placeholder="Account Number">
+                </div>
+                <div class="col">
+                    <input type="text" placeholder="Bank Number">
+                </div>
+            </div>
+        </div>
+        <!-- personal info -->
+
+        <div *ngIf="tab == 1">
+            <div class="row mb-4">
+                <div class="col">
+                    <input type="text" placeholder="First Name">
+                </div>
+                <div class="col">
+                    <input type="text" placeholder="Last Name">
+                </div>
+                <div class="col">
+                    <input type="text" placeholder="Email">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <input type="text" placeholder="Password">
+                </div>
+                <div class="col">
+                    <input type="text" placeholder="Cell Number">
+                </div>
+                <div class="col">
+                    <input type="text" placeholder="Mailing Address">
+                </div>
+            </div>
+        </div>
+        <button class="primary">Save changes</button>
+    </div>
+</div>
